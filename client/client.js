@@ -5,6 +5,7 @@ import App from '../components/App'
 import configureStore from '../redux/storeConfig'
 
 let initialState = {
+    user: { username: 'niro', id: 2},
     todos: [
         { id: 0, completed: false, text: 'Initial todo for demo' }
     ]

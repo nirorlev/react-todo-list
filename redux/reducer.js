@@ -21,6 +21,10 @@ export default function reducer(state, action) {
             return Object.assign({}, state, {
                 todos: state.todos.filter((todo) => { return todo.id !== action.id })
             });
+        case actions.actionTypes.CREATE_NEW_USER_ID:
+            return Object.assign({}, state, {
+                user: { username: state.user.username, id: action.id }
+            });
         default:
             return state;
     }

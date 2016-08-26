@@ -5,6 +5,7 @@ import actions from '../redux/actions'
 
 import TodoInput from './TodoInput'
 import TodoList from './TodoList'
+import UserInfo from './UserInfo'
 
 class App extends Component {
 
@@ -12,6 +13,7 @@ class App extends Component {
         return (
             <div>
                 <h1>Todo List</h1>
+                <UserInfo actions={this.props.actions} user={this.props.user} />
                 <TodoInput addTodo={this.props.actions.addTodo} />
                 <TodoList actions={this.props.actions} todos={this.props.todos} />
             </div>

@@ -2,7 +2,8 @@ let actions = {
     actionTypes: {
         ADD_TODO: "ADD_TODO",
         COMPLETE_TODO: "COMPLETE_TODO",
-        DELETE_TODO: "DELETE_TODO"
+        DELETE_TODO: "DELETE_TODO",
+        CREATE_NEW_USER_ID: "CREATE_USER_ID"
     },
 
     addTodo: function(text) {
@@ -23,6 +24,13 @@ let actions = {
         return {
             type: actions.actionTypes.DELETE_TODO,
             id: id
+        }
+    },
+
+    createNewUserId: function() {
+        return {
+            type: actions.actionTypes.CREATE_NEW_USER_ID,
+            id: Math.round(Math.random()*100)
         }
     }
 }
