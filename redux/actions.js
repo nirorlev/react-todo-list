@@ -32,7 +32,32 @@ let actions = {
             type: actions.actionTypes.CREATE_NEW_USER_ID,
             id: Math.round(Math.random()*100)
         }
-    }
+    },
+
+    createNewUserIdIfOdd: function() {
+        return (dispatch, getState) => {
+            const { user } = getState();
+            if (user.id % 2 === 1)
+                dispatch(actions.createNewUserId());
+        }
+    },
+
+    createNewUserIdTimeout: function(timeMilis) {
+        return (dispatch) => {
+            setTimeout( () => { dispatch(actions.createNewUserId()) }, timeMilis);
+        }
+    },
+
+    // createNewUserIdAsync: function() {
+    //     return (dispatch) => {
+    //         $.get('url', {
+    //             success: (res) => {
+    //                 dispatch(actions.createNewUserId(res.data))
+    //             }
+    //         })
+    //     }
+    // }
+    
 }
 
 export default actions
